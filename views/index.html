@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Translate Easily</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+  <body>
+ 
+      <div class="chat_window">
+          <div class="top_menu">
+            <div class="row">
+              <div class="col-sm-4">
+                
+              </div>
+              <div class="col-sm-4" style="height: 22px;width: 53px;color: #FFF;font-family: Verdana;font-size: 14px; ">
+              <font style="margin-left: 98px;">FROM</font>
+              </div>
+              <div class="col-sm-4" style="height: 22px;width: 53px;color: #FFF;font-family: Verdana;font-size: 14px; margin-left: 60px;">
+                <font style="margin-left: 286px;">TO</font>
+              </div>
+              
+            </div>
+            <div class="row">
+              
+            
+            <div class="col-sm-4" style=" font-family: Verdana;font-size: 28px;  font-weight: 700;  line-height: 36px;color: #FFF; float:left;"><b>TRANSLATE</b>
+            <img src="https://cdn.glitch.com/915c91d3-6711-4d35-9f94-18f7ff9738d6%2Ficons8-google-translate%20(1).svg?v=1611572176834" style="height:35px; width:35px;"></div>
+            
+              <div class="col-sm-4"> 
+                <div class = "col-sm-2"></div>
+                
+                <div class= "col-sm-8">
+                <select class="form-control" id="select-language-1">
+			          <option value="ar">عربى (Arabic)</option>
+                <option value="ca">Català (Catalan)</option>
+                <option value="zh-Hans">簡體中文 Chinese (Simplified)</option>
+                <option value="zh-Hant">中國傳統的Chinese (Traditional)</option>
+                <option value="hr">Hrvatski (Croatian)</option>
+                <option value="en" selected>English</option>
+                <option value="fr">français (French)</option>
+                <option value="de">Deutsche (German)</option>
+                <option value="el">Ελληνικά (Greek)</option>
+                <option value="he">עִברִית (Hebrew)</option>
+                <option value="hi">हिंदी (Hindi)</option>
+                <option value="it">Italiana (Italian)</option>
+                <option value="ja">日本人 (Japanese)</option>
+                <option value="ko">한국어 (Korean)</option>
+                <option value="pt">Português (Portuguese)</option>
+                <option value="ru">русский (Russian)</option>
+                <option value="es">Español (Spanish)</option>
+                <option value="th">ไทย (Thai)</option>
+                <option value="tr">Türk (Turkish)</option>
+                <option value="vi">Tiếng Việt (Vietnamese)</option>
+		            </select>
+            </div>
+              </div>
+            
+            <div class="col-sm-4"> 
+              <div class= "col-sm-2" style="height: 22px;width: 53px;color: #FFF;font-family: Verdana;font-size: 18px;">
+                <button class="swapB" onclick="swapLang()"><i class="fas fa-exchange-alt"></i>SWAP</button>
+              </div>              
+              <div class= "col-sm-8">
+		        <select class="form-control" id="select-language-2">
+			          <option value="ar">عربى (Arabic)</option>
+                <option value="ca">Català (Catalan)</option>
+                <option value="zh-Hans">簡體中文 Chinese (Simplified)</option>
+                <option value="zh-Hant">中國傳統的Chinese (Traditional)</option>
+                <option value="hr">Hrvatski (Croatian)</option>
+                <option value="en" >English</option>
+                <option value="fr">français (French)</option>
+                <option value="de">Deutsche (German)</option>
+                <option value="el">Ελληνικά (Greek)</option>
+                <option value="he">עִברִית (Hebrew)</option>
+                <option value="hi" selected>हिंदी (Hindi)</option>
+                <option value="it">Italiana (Italian)</option>
+                <option value="ja">日本人 (Japanese)</option>
+                <option value="ko">한국어 (Korean)</option>
+                <option value="pt">Português (Portuguese)</option>
+                <option value="ru">русский (Russian)</option>
+                <option value="es">Español (Spanish)</option>
+                <option value="th">ไทย (Thai)</option>
+                <option value="tr">Türk (Turkish)</option>
+                <option value="vi">Tiếng Việt (Vietnamese)</option>
+              </select>
+            </div>
+            </div>
+       </div>
+          </div>
+            <ul class="messages"></ul>
+       
+       
+        
+          <div class="bottom_wrapper clearfix">
+            <div class="row"> 
+              <div class="col">
+              <div class="message_input_wrapper">
+                <input class="message_input" id="keyboard1" placeholder="Enter you message.." />
+              </div>      
+              <div class="send_message">
+                <div class="icon"></div>
+                <img src="https://cdn.glitch.com/915c91d3-6711-4d35-9f94-18f7ff9738d6%2Ficons8-send-letter-50.png?v=1611320270123" class="center">
+              </div>
+              </div>
+              
+            
+              </div> 
+          </div>  
+      
+      </div>
+     <div class="g-form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfXU2Xr_T2oRO_CEbEvpaoxcXFtyNS6U-6Ye-JY2Uheitu_YA/viewform?embedded=true" width="400" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <p>Please fill out a quick survey by clicking on the button below.</p>
+       
+       <a class="button">
+                    <button onclick="document.location='https://ufl.qualtrics.com/jfe/form/SV_6XbXIRXagGpDxyK'" style="width: calc(100% - 5px);  max-width: 400px;  height: 40px; border-radius: 30px;
+                    background-color: #255A8E;border: 2px solid #9e9e9e; "><font style="">QUALTRICS SURVEY</font></button>
+                  </a>     
+       
+    </div>
+       
+       
+          <div class="message_template">
+            <li class="message">
+              
+              <div class="text_wrapper" style="height:fit-content;">
+                <div class="row" >
+                  <div class="col-auto" >
+                    <div class="text" style="font-size: 2vw; height:fit-content;"></div>
+                  </div>
+                </div>              
+              </div> 
+           </li>
+        </div>
+     
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    
+ 
+  </body>
+</html>

@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+ background-image: url(https://cdn.glitch.com/915c91d3-6711-4d35-9f94-18f7ff9738d6%2Fimageedit_1_8048111286.png?v=1611755671627);
+ background-size: cover;
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: center; 
+ background-image: rgba(255,255,255, 10);
+  font-family: "Calibri", "Roboto", sans-serif;
+}
+
+.chat_window {
+  position: absolute;
+  width: calc(100% - 5px);
+  max-width: 850px;
+  height: 580px;
+  border-radius: 15px;
+  background-color: #fff;
+  left: 35%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 2.5px solid #000;
+  
+}
+
+.g-form{
+  position: absolute;
+  left: 68%;
+  top: 5%;
+  
+}
+
+.row{
+   padding-left: 10px;
+}
+.form-control{
+box-sizing: border-box;
+  height: 42px;
+  width: 170px;
+  border-radius: 5px;
+  background-color: #FFF;
+  border: 1px solid #808080;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5), 0 2px 4px 0 rgba(0,0,0,0);  
+  margin-left: 2.5em;
+}
+.top_menu {
+  width: 100%;
+  height: calc(100% - 10px);
+  max-height: 82px;
+  border-radius: 10px 10px 0 0;
+  background-color: #4F4F4F;
+  border: 2.5px solid #000;
+  box-sizing: border-box;
+}
+
+
+.top_menu .buttons {
+  margin: 3px 0 0 20px;
+  position: absolute;
+}
+.top_menu .buttons .button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+.top_menu .buttons .button.close {
+  background-color: #f5886e;
+}
+.top_menu .buttons .button.minimize {
+  background-color: #fdbf68;
+}
+.top_menu .buttons .button.maximize {
+  background-color: #a3d063;
+}
+.top_menu .title {
+  text-align: center;
+  color: #bcbdc0;
+  font-size: 20px;
+}
+
+.messages {
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  height: calc(100% - 180px);
+  max-heigth: 250px;
+  overflow: scroll;
+  
+}
+.messages .message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 3px;
+  opacity: 0;
+  height: fit-content;
+}
+.messages .message.left .avatar {
+  background-color: #f5886e;
+  float: left;
+}
+.messages .message.left .text_wrapper {
+  background-color: #255A8E;
+  margin-left: 0px;
+}
+.messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
+  right: 100%;
+  border-right-color: #ffe6cb;
+}
+.messages .message.left .text {
+  color: #fff;
+  font-size: 0.5vw;
+}
+.messages .message.right .avatar {
+  background-color: #fdbf68;
+  float: right;
+}
+.messages .message.right .text_wrapper {
+  background-color: #FF7500;
+  margin-right: 0px;
+  float: right;
+  
+}
+.messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {
+  left: 100%;
+  border-left-color: #c7eafc;
+}
+.messages .message.right .text {
+  color: #fff;
+}
+.messages .message.appeared {
+  opacity: 1;
+}
+.messages .message .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.messages .message .text_wrapper {
+  display: inline-block;
+  padding: 3px;
+  padding-left: 20px;
+  border-radius: 6px;
+  width: calc(100% - 85px);
+  min-width: 80px;
+  position: relative;
+  height: calc(100%-10px);
+}
+
+.messages .message .text_wrapper .text {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.bottom_wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4F4F4F;
+  border: 2.5px solid #000;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+ 
+}
+.bottom_wrapper .message_input_wrapper {
+  display: inline-block;
+  height: 50px;
+  border: 2.4px solid #4F4F4F;
+  width: calc(100% - 65px);
+  position: relative;
+  padding: 0 20px;
+  border-radius: 25px;
+  background-color: #FFF;
+  border: 2.5px solid #000;
+}
+.bottom_wrapper .message_input_wrapper .message_input {
+  border: none;
+  height: 100%;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  position: absolute;
+  outline-width: 0;
+  color: gray;
+}
+.bottom_wrapper .send_message {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #a3d063;
+  border: 2px solid #a3d063;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-align: center;
+  float: right;
+  transform: rotate(90deg);
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.bottom_wrapper .send_message:hover {
+  color: #a3d063;
+  background-color: #fff;
+}
+.bottom_wrapper .send_message .text {
+  font-size: 18px;
+  font-weight: 300;
+  display: inline-block;
+  line-height: 48px;
+}
+
+.message_template {
+  display: none;
+}
+
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+
+	&__title {
+		width: 100%;
+		color: #fff;
+		margin-bottom: 25px;
+		font-weight: 400;
+		text-align: center;
+	}
+}
+.select-dropdown {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	margin: 0 15px 0 0;
+	
+	&::last-child {
+		margin-right: 0px;
+	}
+
+	&__button {
+		padding: 10px 35px 10px 15px;
+		background-color: #fff;
+		color: #616161;
+		border: 1px solid #cecece;
+		border-radius: 3px;
+		cursor: pointer;
+		width: 210px;
+		text-align: left;
+
+		&::focus {
+			outline: none;
+		}
+
+		.zmdi-chevron-down {
+			position: absolute;
+			right: 10px;
+			top: 12px;
+		}
+	}
+
+	&__list {
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		max-height: 300px;
+		overflow: auto;
+		margin: 0;
+		padding: 0;
+		border: 1px solid #cecece;
+		border-top: 0px solid transparent;
+		list-style-type: none;
+		opacity: 0;
+		pointer-events: none;
+		transform-origin: top left;
+		transform: scale(1,0);
+		transition: all ease-in-out .3s;
+		z-index: 2;
+
+		&.active {
+			opacity: 1;
+			pointer-events: auto;
+			transform: scale(1,1);
+
+		}
+	}
+	&__list-item {
+		display: block;
+		list-style-type: none;
+		padding: 10px 15px;
+		background: #fff;
+		border-top: 1px solid #e6e6e6;
+		font-size: 14px;
+		line-height: 1.4;
+		cursor: pointer;
+		color: #616161;
+		text-align: left;
+		transition: all ease-in-out .3s;
+
+		&:hover {
+			background-color: #1fc69d;
+			color: #fff;
+			transition: all ease-in-out .3s;
+		}
+	}
+}
+
+.button {
+  
+  width: calc(100% - 5px);
+  max-width: 1000px;
+  height: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  overflow: hidden;
+  color: #FFF;
+  font-family: "Verdana";
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  
+  }
+}
+
+.toggle-switch {
+  background: #ccc;
+  width: 80px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+  
+  &:after {
+    content: " ";
+    display: block;
+    width: 40px;
+    height: 30px;
+    background-color: @active;
+    border: 3px solid #fff;
+    border-top: 0;
+    border-bottom: 0;
+    margin-left: -3px;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .active & {
+    &:after {
+      margin-left: 40px;
+    }
+  }
+}
+
+.toggle-label {
+  display: inline-block;
+  line-height: 30px;
+}
+
+.toggle-label-off {
+  color: @active;
+}
+
+.active {
+  
+  .toggle-label-off {
+    color: @inactive;
+  }
+
+  .toggle-label-on {
+    color: @active;
+  }
+}
+
+.swapB {
+  background-color: transparent;
+  border:none;
+}
+
+
+
+}
+form header{
+  width: 100%;
+  font-size: 15px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  border: 1px solid #333;
+  background: #222;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 0px 0;
+}
+form .btn button{
+  height: 100%;
+  width: 50%;
+  border: 1px solid #444;
+  outline: none;
+  background: #222;
+  color: #999;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .btn button:hover{
+  background: #1b1b1b;
+}
+
